@@ -4,12 +4,14 @@ const store = require('../store')
 const showEntertainmentsQueueTemplate = require('../templates/entertainments_queue.handlebars')
 
 const createEntertainmentSuccess = function (data) {
+  $('#messages').empty()
   $('#createModalLabel').text('Added to queue!')
   $('#createModalLabel').css('color', 'green')
 }
 
 const createEntertainmentFailure = function (error) {
   console.log(error)
+  $('#messages').empty()
   $('#createModalLabel').text('Not able to add to queue!')
   $('#createModalLabel').css('color', 'red')
 }
@@ -17,17 +19,22 @@ const createEntertainmentFailure = function (error) {
 const getAllSuccess = function (data) {
   console.log(data)
   $('#content').empty()
+  $('#messages').empty()
   const showQueueHTML = showEntertainmentsQueueTemplate({ entertainments: data.entertainments })
   $('#content').append(showQueueHTML)
 }
 
 const getAllFailure = function (error) {
   console.log(error)
+  $('#content').empty()
+  $('#messages').empty()
+  $('#messages').text('Not able to show queue!')
 }
 
 const getOneEntertainmentSuccess = function (data) {
   console.log(data)
   $('#content').empty()
+  $('#messages').empty()
   const oneEntertainmentHTML = (
     `<ul>
     <li><h2>Title: ${data.entertainment.title}</h2></li>
@@ -43,24 +50,36 @@ const getOneEntertainmentSuccess = function (data) {
 
 const getOneEntertainmentFailure = function (error) {
   console.log(error)
+  $('#content').empty()
+  $('#messages').empty()
+  $('#messages').text('Not able to show entertainment!')
 }
 
 const updateEntertainmentSuccess = function (data) {
-  $('#updateModalLabel').text('Updated entertainment ID', data.entertainment.id)
+  $('#content').empty()
+  $('#messages').empty()
+  $('#updateModalLabel').text('Updated entertainment')
   $('#updateModalLabel').css('color', 'green')
 }
 
 const updateEntertainmentFailure = function (error) {
   console.log(error)
+  $('#content').empty()
+  $('#messages').empty()
+  $('#updateModalLabel').text('Not able to update entertainment!')
 }
 
 const deleteEntertainmentSuccess = function (data) {
   $('#content').empty()
-  $('#content').text('Entertainment has been deleted')
+  $('#messages').empty()
+  $('#messages').text('Entertainment has been deleted')
 }
 
 const deleteEntertainmentFailure = function (error) {
   console.log(error)
+  $('#content').empty()
+  $('#messages').empty()
+  $('#messages').text('Not able to delete entertainment')
 }
 
 module.exports = {
