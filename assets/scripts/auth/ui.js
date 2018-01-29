@@ -44,6 +44,7 @@ const signOutSuccess = function () {
   // console.log('Signed out!')
   $('#modalLabel').text('Signed out!')
   $('modalLabel').css('color', 'green')
+  $('#content').empty()
   store.user = null
 }
 

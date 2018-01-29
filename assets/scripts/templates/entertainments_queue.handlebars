@@ -1,0 +1,31 @@
+{{#each entertainments as |entertainment|}}
+
+ <ul data-id="{{entertainment.id}}">
+ <li><h1> <small>Title: {{entertainment.title}}</small></h1></li>
+ <div>
+    <li>ID: {{entertainment.id}}</li>
+     <li>{{#if entertainment.ent_type}}
+       Type: {{entertainment.ent_type}}
+     {{else}}
+       Type: No type provided.
+     {{/if}}</li>
+     <li>{{#if entertainment.genre}}
+       Genre: {{entertainment.genre}}
+     {{else}}
+       Genre: No genre provided.
+     {{/if}}</li>
+     <li>{{#if entertainment.synopsis}}
+       Synopsis: {{entertainment.synopsis}}
+     {{else}}
+       Synopsis: No synopsis provided.
+     {{/if}}</li>
+     <li>{{#if entertainment.where_to_watch}}
+       Where to watch: {{entertainment.where_to_watch}}
+     {{else}}
+       Where to watch: No info provided.
+     {{/if}}</li>
+ </div>
+ <li><button class="removeButton" class="btn btn-default">Remove from Queue</button></li>
+</ul>
+
+{{/each}}

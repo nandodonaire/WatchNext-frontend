@@ -15,7 +15,7 @@
 
 <body class="container-fluid">
   <aside>
-  <h1>WatchNext</h1>
+    <h1>WatchNext</h1>
 
     <!-- Button trigger Account modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
@@ -74,12 +74,12 @@
     <!-- app-api buttons -->
     <div>
       <!-- create entertainment -->
-        <!-- Button trigger Add to Queue modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
+      <!-- Button trigger Add to Queue modal -->
+      <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#createModal">
         Add To Queue
       </button>
 
-        <!-- Add to Queue Modal -->
+      <!-- Add to Queue Modal -->
       <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -106,7 +106,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Type</label>
-                  <select class="form-control" name="entertainment[type]" id="formControlSelect1">
+                  <select class="form-control" name="entertainment[ent_type]" id="formControlSelect1">
                     <option>TV Show</option>
                     <option>Movie</option>
                   </select>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Where to watch</label>
-                  <input type="text" name="entertainment[where_to_watch]" class="form-control" id="formControlInput3" placeholder="Enter title here">
+                  <input type="text" name="entertainment[where_to_watch]" class="form-control" id="formControlInput3" placeholder="Enter where to watch here">
                 </div>
                 <input type="submit" name="submit" value="Add">
               </form>
@@ -133,14 +133,86 @@
         </div>
       </div>
     </div>
-    <button type="button" id="get-all" class="btn btn-primary btn-lg">Get All</button>
-    <button type="button" class="btn btn-primary btn-lg">Get One</button>
-    <button type="button" class="btn btn-primary btn-lg">Update</button>
-    <button type="button" class="btn btn-primary btn-lg">Delete</button>
+    <!-- Button to get all entertainments -->
+    <button type="button" id="get-all" class="btn btn-primary button">Show Queue</button>
+    <!-- Get one entertainment functionality -->
+    <div>
+      <form class="entertainment-search" id="entertainment-search">
+        <div class="form-group">
+          <input type="text" name="entertainment[id]" placeholder="Entertainment ID Here">
+        </div>
+        <button type="submit" class="btn btn-primary button">Show entertainment</button>
+      </form>
+    </div>
+    <!-- Update entertainment functionality -->
+    <div>
+      <!-- Button trigger update modal -->
+      <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#updateModal">
+        Update Entertainment
+      </button>
+
+      <!-- Update Modal -->
+      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateModalLabel">Update Entertainment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="updateEntertainment">
+                <div class="form-group">
+                  <label for="updateFormControlInput">ID</label>
+                  <input type="text" name="entertainment[id]" class="form-control" id="updateFormControlInput" placeholder="Enter ID here">
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlInput1">Title</label>
+                  <input type="text" name="entertainment[title]" class="form-control" id="updateFormControlInput1" placeholder="Enter title here">
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlSelect1">Type</label>
+                  <select class="form-control" name="entertainment[ent_type]" id="updateFormControlSelect1">
+                    <option>TV Show</option>
+                    <option>Movie</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlInput2">Genre</label>
+                  <input type="text" name="entertainment[genre]" class="form-control" id="updateFormControlInput2" placeholder="Enter genre here">
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlTextarea1">Synopsis</label>
+                  <textarea class="form-control" name="entertainment[synopsis]" id="updateFormFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlInput1">Where to watch</label>
+                  <input type="text" name="entertainment[where_to_watch]" class="form-control" id="updateFormControlInput3" placeholder="Enter where to watch here">
+                </div>
+                <input type="submit" name="submit" value="Save">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete entertainment -->
+    <div>
+      <form class="entertainment-delete" id="entertainment-delete">
+        <div class="form-group">
+          <input type="text" name="entertainment[id]" placeholder="Entertainment ID Here">
+        </div>
+        <button type="submit" class="btn btn-primary button">Delete Entertainment</button>
+      </form>
+    </div>
   </aside>
   <div class="container" id="content">
-  <!-- Empty divto display Get All entertainments -->
+    <!-- Empty divto display Get All entertainments -->
   </div>
-  </body>
+</body>
 
 </html>

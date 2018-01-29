@@ -25,7 +25,43 @@ const getAll = function (data) {
   })
 }
 
+const getOneEntertainment = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/entertainments/' + data.entertainment.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const updateEntertainment = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/entertainments/' + data.entertainment.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteEntertainment = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/entertainments/' + data.entertainment.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createEntertainment,
-  getAll
+  getAll,
+  getOneEntertainment,
+  updateEntertainment,
+  deleteEntertainment
 }
