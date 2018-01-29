@@ -18,6 +18,9 @@ const signInSuccess = function (data) {
   // console.log(data)
   $('#modalLabel').text('Successfully signed in!')
   $('#modalLabel').css('color', 'green')
+  $('.logged-out').addClass('hide')
+  $('.logged-in').removeClass('hide')
+  $('.app-api-functionality').removeClass('hide')
   store.user = data.user
   console.log('the stored data', store)
 }
@@ -44,6 +47,9 @@ const signOutSuccess = function () {
   // console.log('Signed out!')
   $('#modalLabel').text('Signed out!')
   $('modalLabel').css('color', 'green')
+  $('.logged-out').removeClass('hide')
+  $('.logged-in').addClass('hide')
+  $('.app-api-functionality').addClass('hide')
   $('#content').empty()
   store.user = null
 }

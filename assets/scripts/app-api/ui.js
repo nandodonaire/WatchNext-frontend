@@ -79,7 +79,7 @@ const deleteEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#messages').text('Not able to delete entertainment')
+  $('#messages').text('Not able to delete entertainment!')
 }
 
 module.exports = {
