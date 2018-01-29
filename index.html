@@ -14,13 +14,13 @@
 </head>
 
 <body class="container-fluid">
+  <aside>
   <h1>WatchNext</h1>
 
-  <body class="container-fluid">
-    <!-- Button trigger modal -->
+    <!-- Button trigger Account modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
-  Account
-</button>
+      Account
+    </button>
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -35,7 +35,7 @@
           <div class="modal-body">
             <form id="sign-up" class="logged-out">
               <fieldset>
-                <legend>Sign up!</legend>
+                <legend>Sign up</legend>
                 <input type="text" name="credentials[email]" placeholder="Enter Email">
                 <input type="password" name="credentials[password]" placeholder="Enter Password">
                 <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
@@ -44,7 +44,7 @@
             </form>
             <form id="sign-in" class="logged-out">
               <fieldset>
-                <legend>Sign in!</legend>
+                <legend>Sign in</legend>
                 <input type="text" name="credentials[email]" placeholder="Enter Email">
                 <input type="password" name="credentials[password]" placeholder="Enter Password">
                 <input type="submit" name="submit" value="Sign in!">
@@ -73,12 +73,74 @@
     </div>
     <!-- app-api buttons -->
     <div>
-      <button type="button" class="btn btn-primary btn-lg">Create</button>
-      <button type="button" class="btn btn-primary btn-lg">Get All</button>
-      <button type="button" class="btn btn-primary btn-lg">Get One</button>
-      <button type="button" class="btn btn-primary btn-lg">Update</button>
-      <button type="button" class="btn btn-primary btn-lg">Delete</button>
+      <!-- create entertainment -->
+        <!-- Button trigger Add to Queue modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
+        Add To Queue
+      </button>
+
+        <!-- Add to Queue Modal -->
+      <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="createModalLabel">Add to Queue</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="addToQueue">
+                <!-- <fieldset>
+                  <legend>Add to Queue</legend>
+                  <input type="text" name="entertainment[title]" placeholder="Enter Title">
+                  <input type="text" name="entertainment[type]" placeholder="Enter Type">
+                  <input type="text" name="entertainment[genre]" placeholder="Enter Genre">
+                  <input type="text" name="entertainment[synopsis]" placeholder="Enter Synopsis">
+                  <input type="text" name="entertainment[where_to_watch]" placeholder="Where to Watch">
+                  <input type="submit" name="submit" value="Add to Queue">
+                </fieldset> -->
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Title</label>
+                  <input type="text" name="entertainment[title]" class="form-control" id="formControlInput1" placeholder="Enter title here">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Type</label>
+                  <select class="form-control" name="entertainment[type]" id="formControlSelect1">
+                    <option>TV Show</option>
+                    <option>Movie</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput2">Genre</label>
+                  <input type="text" name="entertainment[genre]" class="form-control" id="formControlInput2" placeholder="Enter genre here">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Synopsis</label>
+                  <textarea class="form-control" name="entertainment[synopsis]" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Where to watch</label>
+                  <input type="text" name="entertainment[where_to_watch]" class="form-control" id="formControlInput3" placeholder="Enter title here">
+                </div>
+                <input type="submit" name="submit" value="Add">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <button type="button" id="get-all" class="btn btn-primary btn-lg">Get All</button>
+    <button type="button" class="btn btn-primary btn-lg">Get One</button>
+    <button type="button" class="btn btn-primary btn-lg">Update</button>
+    <button type="button" class="btn btn-primary btn-lg">Delete</button>
+  </aside>
+  <div class="container" id="content">
+  <!-- Empty divto display Get All entertainments -->
+  </div>
   </body>
 
 </html>

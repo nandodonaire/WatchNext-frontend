@@ -19,7 +19,7 @@ const signInSuccess = function (data) {
   $('#modalLabel').text('Successfully signed in!')
   $('#modalLabel').css('color', 'green')
   store.user = data.user
-  // console.log('the stored data', store)
+  console.log('the stored data', store)
 }
 
 const signInFailure = function (data) {
