@@ -4,7 +4,7 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   // console.log(data)
-  $('#modalLabel').text('Successfully signed up!')
+  $('#modalLabel').text('Successfully signed up! Please sign in to continue!')
   $('#modalLabel').css('color', 'green')
 }
 
@@ -51,6 +51,7 @@ const signOutSuccess = function () {
   $('.logged-in').addClass('hide')
   $('.app-api-functionality').addClass('hide')
   $('#content').empty()
+  $('#messages').empty()
   store.user = null
 }
 

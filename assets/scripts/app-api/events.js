@@ -11,6 +11,7 @@ const onCreate = function (event) {
   appApi.createEntertainment(data)
     .then(appUi.createEntertainmentSuccess)
     .catch(appUi.createEntertainmentFailure)
+  $('#addToQueue').find('input:text, select, textarea').val('')
 }
 
 const onGetAll = function (event) {
@@ -38,6 +39,7 @@ const onUpdateEntertainment = function (event) {
   appApi.updateEntertainment(data)
     .then(appUi.updateEntertainmentSuccess)
     .catch(appUi.updateEntertainmentFailure)
+  $('#updateEntertainment').find('input:text, select, textarea').val('')
 }
 
 const onEntertainmentDelete = function (event) {

@@ -3,6 +3,25 @@
   margin-top: 30px;
 }
 
+.account {
+  margin-top: 15px;
+  border-bottom: black;
+}
+
+aside {
+  width: 20%;
+  margin: 0px;
+  float: left;
+  clear: none;
+}
+
+.aside {
+  border-right: black 1px solid;
+  width: 20%;
+  padding: 0px;
+  margin: 0px;
+}
+
 .entertainment-search {
   margin-top: 30px;
 }
@@ -12,8 +31,19 @@
 }
 
 .container {
-  float: right;
-  border: black;
+  float: left;
+  border-color: black;
+  clear: none;
+  width: 400px;
+}
+
+.content {
+  // border: black 1px solid;
+  margin-left: 10px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .hide {

@@ -14,11 +14,11 @@
 </head>
 
 <body class="container-fluid">
-  <aside>
+  <aside class="aside">
     <h1>WatchNext</h1>
 
     <!-- Button trigger Account modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
+    <button type="button" class="btn btn-primary account" data-toggle="modal" data-target="#modal">
       Account
     </button>
 
@@ -137,10 +137,10 @@
     <!-- Get one entertainment functionality -->
     <div>
       <form class="entertainment-search" id="entertainment-search">
+        <button type="submit" class="btn btn-primary button">Show entertainment</button>
         <div class="form-group">
           <input type="text" name="entertainment[id]" placeholder="Entertainment ID Here">
         </div>
-        <button type="submit" class="btn btn-primary button">Show entertainment</button>
       </form>
     </div>
     <!-- Update entertainment functionality -->
@@ -202,18 +202,18 @@
     <!-- Delete entertainment -->
     <div>
       <form class="entertainment-delete" id="entertainment-delete">
+        <button type="submit" class="btn btn-primary button">Delete Entertainment</button>
         <div class="form-group">
           <input type="text" name="entertainment[id]" placeholder="Entertainment ID Here">
         </div>
-        <button type="submit" class="btn btn-primary button">Delete Entertainment</button>
       </form>
     </div>
   </div>
   </aside>
-  <div class="container" id="messages">
+  <div class="container messages" id="messages">
     <!-- Empty div to display messages -->
   </div>
-  <div class="container" id="content">
+  <div class="container content" id="content">
     <!-- Empty divto display entertainments -->
   </div>
 </body>

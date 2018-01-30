@@ -5,6 +5,7 @@ const showEntertainmentsQueueTemplate = require('../templates/entertainments_que
 
 const createEntertainmentSuccess = function (data) {
   $('#messages').empty()
+  $('#content').empty()
   $('#createModalLabel').text('Added to queue!')
   $('#createModalLabel').css('color', 'green')
 }
@@ -21,7 +22,11 @@ const getAllSuccess = function (data) {
   $('#content').empty()
   $('#messages').empty()
   const showQueueHTML = showEntertainmentsQueueTemplate({ entertainments: data.entertainments })
-  $('#content').append(showQueueHTML)
+  if (data.entertainments.length === 0) {
+    $('#messages').append('There is nothing on the queue! Please add to the queue by clicking on Add To Queue.')
+  } else {
+    $('#content').append(showQueueHTML)
+  }
 }
 
 const getAllFailure = function (error) {
@@ -52,7 +57,7 @@ const getOneEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#messages').text('Not able to show entertainment!')
+  $('#messages').text('Not able to show entertainment! Please make sure to enter a valid Entertainment ID.')
 }
 
 const updateEntertainmentSuccess = function (data) {
@@ -66,7 +71,7 @@ const updateEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#updateModalLabel').text('Not able to update entertainment!')
+  $('#updateModalLabel').text('Not able to update entertainment! Please make sure to enter information in all of the fields.')
 }
 
 const deleteEntertainmentSuccess = function (data) {
@@ -79,7 +84,7 @@ const deleteEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#messages').text('Not able to delete entertainment!')
+  $('#messages').text('Not able to delete entertainment! Please make sure to enter a valid Entertainment ID.')
 }
 
 module.exports = {
