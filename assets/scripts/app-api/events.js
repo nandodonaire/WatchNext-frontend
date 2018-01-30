@@ -30,6 +30,7 @@ const onGetEntertainment = function (event) {
   appApi.getOneEntertainment(data)
     .then(appUi.getOneEntertainmentSuccess)
     .catch(appUi.getOneEntertainmentFailure)
+  $('#entertainment-search').find('input:text, select, textarea').val('')
 }
 
 const onUpdateEntertainment = function (event) {
@@ -49,6 +50,7 @@ const onEntertainmentDelete = function (event) {
   appApi.deleteEntertainment(data)
     .then(appUi.deleteEntertainmentSuccess)
     .catch(appUi.deleteEntertainmentFailure)
+  $('#entertainment-delete').find('input:text, select, textarea').val('')
 }
 
 const addHandlers = function () {

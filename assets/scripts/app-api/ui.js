@@ -8,6 +8,17 @@ const createEntertainmentSuccess = function (data) {
   $('#content').empty()
   $('#createModalLabel').text('Added to queue!')
   $('#createModalLabel').css('color', 'green')
+  const createdEntertainmentHTML = (
+    `<ul>
+    <li><h2>Title: ${data.entertainment.title}</h2></li>
+    <li>ID: ${data.entertainment.id} </li>
+    <li>Type: ${data.entertainment.ent_type}</li>
+    <li>Genre: ${data.entertainment.genre}</li>
+    <li>Synopsis: ${data.entertainment.synopsis}</li>
+    <li>Where to Watch: ${data.entertainment.where_to_watch}</li>
+    </ul>`
+  )
+  $('#content').append(createdEntertainmentHTML)
 }
 
 const createEntertainmentFailure = function (error) {
