@@ -71,7 +71,7 @@ const updateEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#updateModalLabel').text('Not able to update entertainment! Please make sure to enter information in all of the fields.')
+  $('#updateModalLabel').text('Not able to update entertainment! Please enter a valid ID and make sure to enter information in all of the fields.')
 }
 
 const deleteEntertainmentSuccess = function (data) {
