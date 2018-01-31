@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('../store')
+require('../store')
 const showEntertainmentsQueueTemplate = require('../templates/entertainments_queue.handlebars')
 
 const createEntertainmentSuccess = function (data) {
@@ -22,15 +22,15 @@ const createEntertainmentSuccess = function (data) {
   $('#messages').append('Here is the entertainment you created:')
 }
 
-const createEntertainmentFailure = function (error) {
-  console.log(error)
+const createEntertainmentFailure = function (data) {
+  // console.log(error)
   $('#messages').empty()
   $('#createModalLabel').text('Not able to add to queue!')
   $('#createModalLabel').css('color', 'red')
 }
 
 const getAllSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#content').empty()
   $('#messages').empty()
   const showQueueHTML = showEntertainmentsQueueTemplate({ entertainments: data.entertainments })
@@ -42,15 +42,15 @@ const getAllSuccess = function (data) {
   }
 }
 
-const getAllFailure = function (error) {
-  console.log(error)
+const getAllFailure = function (data) {
+  // console.log(error)
   $('#content').empty()
   $('#messages').empty()
   $('#messages').text('Not able to show queue!')
 }
 
 const getOneEntertainmentSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#content').empty()
   $('#messages').empty()
   const oneEntertainmentHTML = (
@@ -66,8 +66,8 @@ const getOneEntertainmentSuccess = function (data) {
   $('#content').append(oneEntertainmentHTML)
 }
 
-const getOneEntertainmentFailure = function (error) {
-  console.log(error)
+const getOneEntertainmentFailure = function (data) {
+  // console.log(error)
   $('#content').empty()
   $('#messages').empty()
   $('#messages').text('Not able to show entertainment! Please make sure to enter an existing Entertainment ID.')
@@ -92,8 +92,8 @@ const updateEntertainmentSuccess = function (data) {
   $('#messages').append('Here is the entertainment you updated:')
 }
 
-const updateEntertainmentFailure = function (error) {
-  console.log(error)
+const updateEntertainmentFailure = function (data) {
+  // console.log(error)
   $('#content').empty()
   $('#messages').empty()
   $('#updateModalLabel').text('Not able to update entertainment! Please enter an existing ID and make sure to enter information in all of the fields.')
@@ -105,8 +105,8 @@ const deleteEntertainmentSuccess = function (data) {
   $('#messages').text('Entertainment has been deleted')
 }
 
-const deleteEntertainmentFailure = function (error) {
-  console.log(error)
+const deleteEntertainmentFailure = function (data) {
+  // console.log(error)
   $('#content').empty()
   $('#messages').empty()
   $('#messages').text('Not able to delete entertainment! Please make sure to enter an existing Entertainment ID.')

@@ -7,7 +7,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreate = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   appApi.createEntertainment(data)
     .then(appUi.createEntertainmentSuccess)
     .catch(appUi.createEntertainmentFailure)
@@ -17,7 +17,7 @@ const onCreate = function (event) {
 const onGetAll = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   appApi.getAll(data)
     .then(appUi.getAllSuccess)
     .catch(appUi.getAllFailure)
@@ -26,7 +26,7 @@ const onGetAll = function (event) {
 const onGetEntertainment = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   appApi.getOneEntertainment(data)
     .then(appUi.getOneEntertainmentSuccess)
     .catch(appUi.getOneEntertainmentFailure)
@@ -36,7 +36,7 @@ const onGetEntertainment = function (event) {
 const onUpdateEntertainment = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   appApi.updateEntertainment(data)
     .then(appUi.updateEntertainmentSuccess)
     .catch(appUi.updateEntertainmentFailure)
@@ -46,7 +46,7 @@ const onUpdateEntertainment = function (event) {
 const onEntertainmentDelete = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   appApi.deleteEntertainment(data)
     .then(appUi.deleteEntertainmentSuccess)
     .catch(appUi.deleteEntertainmentFailure)
