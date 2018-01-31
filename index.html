@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>WatchNext</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <aside class="aside">
+    <h1>WatchNext</h1>
+
+    <!-- Button trigger Account modal -->
+    <button type="button" class="btn btn-primary account" data-toggle="modal" data-target="#modal">
+      Account
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up" class="logged-out">
+              <fieldset>
+                <legend>Sign up</legend>
+                <input type="text" name="credentials[email]" placeholder="Enter Email">
+                <input type="password" name="credentials[password]" placeholder="Enter Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <input type="submit" name="submit" value="Sign up!">
+              </fieldset>
+            </form>
+            <form id="sign-in" class="logged-out">
+              <fieldset>
+                <legend>Sign in</legend>
+                <input type="text" name="credentials[email]" placeholder="Enter Email">
+                <input type="password" name="credentials[password]" placeholder="Enter Password">
+                <input type="submit" name="submit" value="Sign in!">
+              </fieldset>
+            </form>
+            <form id="change-password" class="logged-in">
+              <fieldset>
+                <legend>Change Password</legend>
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
+                <input type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+            <form id="sign-out" class="logged-in">
+              <fieldset>
+                <legend>Sign Out</legend>
+                <input type="submit" name="submit" value="Sign Out">
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- app-api buttons -->
+    <div class="app-api-functionality">
+      <!-- create entertainment -->
+      <!-- Button trigger Add to Queue modal -->
+      <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#createModal">
+        Add To Queue
+      </button>
+
+      <!-- Add to Queue Modal -->
+      <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="createModalLabel">Add Entertainment to Queue</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="addToQueue">
+                <!-- <fieldset>
+                  <legend>Add to Queue</legend>
+                  <input type="text" name="entertainment[title]" placeholder="Enter Title">
+                  <input type="text" name="entertainment[type]" placeholder="Enter Type">
+                  <input type="text" name="entertainment[genre]" placeholder="Enter Genre">
+                  <input type="text" name="entertainment[synopsis]" placeholder="Enter Synopsis">
+                  <input type="text" name="entertainment[where_to_watch]" placeholder="Where to Watch">
+                  <input type="submit" name="submit" value="Add to Queue">
+                </fieldset> -->
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Title</label>
+                  <input type="text" name="entertainment[title]" class="form-control" id="formControlInput1" placeholder="Enter title here" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Type</label>
+                  <select class="form-control" name="entertainment[ent_type]" id="formControlSelect1">
+                    <option>TV Show</option>
+                    <option>Movie</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput2">Genre</label>
+                  <input type="text" name="entertainment[genre]" class="form-control" id="formControlInput2" placeholder="Enter genre here">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Synopsis</label>
+                  <textarea class="form-control" name="entertainment[synopsis]" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Where to watch</label>
+                  <input type="text" name="entertainment[where_to_watch]" class="form-control" id="formControlInput3" placeholder="Enter where to watch here">
+                </div>
+                <input type="submit" name="submit" value="Add">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Button to get all entertainments -->
+    <button type="button" id="get-all" class="btn btn-primary button">Show Queue</button>
+    <!-- Get one entertainment functionality -->
+    <div>
+      <form class="entertainment-search" id="entertainment-search">
+        <button type="submit" class="btn btn-primary button">Show Entertainment</button>
+        <div class="form-group">
+          <input type="text" name="entertainment[id]" placeholder="Show Entertainment ID" required>
+        </div>
+      </form>
+    </div>
+    <!-- Update entertainment functionality -->
+    <div>
+      <!-- Button trigger update modal -->
+      <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#updateModal">
+        Update Entertainment
+      </button>
+
+      <!-- Update Modal -->
+      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateModalLabel">You can update existing entertainments here! Please enter an existing ID and make sure to enter information in all of the fields.</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="updateEntertainment">
+                <div class="form-group">
+                  <label for="updateFormControlInput">ID</label>
+                  <input type="text" name="entertainment[id]" class="form-control" id="updateFormControlInput" placeholder="Enter ID here" required>
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlInput1">Title</label>
+                  <input type="text" name="entertainment[title]" class="form-control" id="updateFormControlInput1" placeholder="Enter title here">
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlSelect1">Type</label>
+                  <select class="form-control" name="entertainment[ent_type]" id="updateFormControlSelect1">
+                    <option>TV Show</option>
+                    <option>Movie</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlInput2">Genre</label>
+                  <input type="text" name="entertainment[genre]" class="form-control" id="updateFormControlInput2" placeholder="Enter genre here">
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlTextarea1">Synopsis</label>
+                  <textarea class="form-control" name="entertainment[synopsis]" id="updateFormFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="updateFormControlInput1">Where to watch</label>
+                  <input type="text" name="entertainment[where_to_watch]" class="form-control" id="updateFormControlInput3" placeholder="Enter where to watch here">
+                </div>
+                <input type="submit" name="submit" value="Save">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete entertainment -->
+    <div>
+      <form class="entertainment-delete" id="entertainment-delete">
+        <button type="submit" class="btn btn-primary button">Delete Entertainment</button>
+        <div class="form-group">
+          <input type="text" name="entertainment[id]" placeholder="Delete Entertainment ID" required>
+        </div>
+      </form>
+    </div>
+  </div>
+  </aside>
+  <div class="container messages" style="overflow-y: scroll" id="messages">
+    <!-- Empty div to display messages -->
+  </div>
+  <div class="container content" style="overflow-y: scroll" id="content">
+    <!-- Empty divto display entertainments -->
+  </div>
+</body>
+
+</html>
