@@ -38,7 +38,7 @@ const getAllSuccess = function (data) {
     $('#messages').append('There is nothing on the queue! Please add to the queue by clicking on Add To Queue.')
   } else {
     $('#content').append(showQueueHTML)
-    $('#messages').append('Here are the entertainments in your queue:')
+    $('#messages').append('Here are the entertainments in your queue! Please scroll to see all.')
   }
 }
 
@@ -64,6 +64,7 @@ const getOneEntertainmentSuccess = function (data) {
     </ul>`
   )
   $('#content').append(oneEntertainmentHTML)
+  $('#messages').append('Here is the entertainment that you requested!')
 }
 
 const getOneEntertainmentFailure = function (data) {
@@ -102,7 +103,7 @@ const updateEntertainmentFailure = function (data) {
 const deleteEntertainmentSuccess = function (data) {
   $('#content').empty()
   $('#messages').empty()
-  $('#messages').text('Entertainment has been deleted')
+  $('#messages').text('Entertainment has been deleted! Please click on Show Queue to see your updated queue.')
 }
 
 const deleteEntertainmentFailure = function (data) {

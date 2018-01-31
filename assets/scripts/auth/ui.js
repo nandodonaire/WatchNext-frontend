@@ -10,14 +10,14 @@ const signUpSuccess = function (data) {
 
 const signUpFailure = function (data) {
   // console.error(error)
-  $('#modalLabel').text('Sign up failed!')
+  $('#modalLabel').text("Sign up failed! Please make sure that you don't have an existing account and that your password and password confirmation match.")
   $('#modalLabel').css('color', 'red')
 }
 
 const signInSuccess = function (data) {
   // console.log(data)
-  $('#modalLabel').text('Successfully signed in!')
-  $('#modalLabel').css('color', 'green')
+  // $('#modalLabel').text('Successfully signed in!')
+  // $('#modalLabel').css('color', 'green')
   $('#messages').empty()
   const welcomeMessageHTML = (
     `<p>Welcome ${data.user.email}! You can add entertainments to your queue by clicking on the Add To Queue button. You can then see all of the entertainments in your queue by clicking on Show Queue.</p>`
@@ -28,6 +28,8 @@ const signInSuccess = function (data) {
   $('.logged-in').removeClass('hide')
   $('.app-api-functionality').removeClass('hide')
   store.user = data.user
+  $('#modal').modal('hide')
+  $('#modalLabel').empty()
   // console.log('the stored data', store)
 }
 
@@ -51,8 +53,8 @@ const changePasswordFailure = function (data) {
 
 const signOutSuccess = function () {
   // console.log('Signed out!')
-  $('#modalLabel').text('Signed out!')
-  $('modalLabel').css('color', 'green')
+  // $('#modalLabel').text('Signed out!')
+  // $('modalLabel').css('color', 'green')
   $('.logged-out').removeClass('hide')
   $('.logged-in').addClass('hide')
   $('.app-api-functionality').addClass('hide')
@@ -61,6 +63,8 @@ const signOutSuccess = function () {
   $('#messages').empty()
   $('#messages').append(" Having trouble remembering all of the movies and shows you'd like to watch and where you can watch them? You can keep track of all of them here! Please sign in to view and add to your queue.")
   store.user = null
+  $('#modal').modal('hide')
+  $('#modalLabel').empty()
 }
 
 const signOutFailure = function () {
