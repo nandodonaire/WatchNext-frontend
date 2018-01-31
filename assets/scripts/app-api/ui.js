@@ -68,7 +68,7 @@ const getOneEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#messages').text('Not able to show entertainment! Please make sure to enter a valid Entertainment ID.')
+  $('#messages').text('Not able to show entertainment! Please make sure to enter an existing Entertainment ID.')
 }
 
 const updateEntertainmentSuccess = function (data) {
@@ -82,7 +82,7 @@ const updateEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#updateModalLabel').text('Not able to update entertainment! Please enter a valid ID and make sure to enter information in all of the fields.')
+  $('#updateModalLabel').text('Not able to update entertainment! Please enter an existing ID and make sure to enter information in all of the fields.')
 }
 
 const deleteEntertainmentSuccess = function (data) {
@@ -95,7 +95,7 @@ const deleteEntertainmentFailure = function (error) {
   console.log(error)
   $('#content').empty()
   $('#messages').empty()
-  $('#messages').text('Not able to delete entertainment! Please make sure to enter a valid Entertainment ID.')
+  $('#messages').text('Not able to delete entertainment! Please make sure to enter an existing Entertainment ID.')
 }
 
 module.exports = {

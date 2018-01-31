@@ -19,6 +19,7 @@ const signInSuccess = function (data) {
   $('#modalLabel').text('Successfully signed in!')
   $('#modalLabel').css('color', 'green')
   $('#messages').empty()
+  $('#content').removeClass('hide')
   $('.logged-out').addClass('hide')
   $('.logged-in').removeClass('hide')
   $('.app-api-functionality').removeClass('hide')
@@ -52,7 +53,9 @@ const signOutSuccess = function () {
   $('.logged-in').addClass('hide')
   $('.app-api-functionality').addClass('hide')
   $('#content').empty()
+  $('#content').addClass('hide')
   $('#messages').empty()
+  $('#messages').append(" Having trouble remembering all of the movies and shows you'd like to watch and where you can watch them? You can keep track of all of them here! Please sign in to view and add to your queue.")
   store.user = null
 }
 

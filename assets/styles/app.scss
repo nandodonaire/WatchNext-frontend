@@ -9,17 +9,21 @@
 }
 
 aside {
-  width: 20%;
   margin: 0px;
-  float: left;
   clear: none;
 }
 
 .aside {
   border-right: black 1px solid;
-  width: 20%;
-  padding: 0px;
+  width: 230px;
+  // min-width: 70px;
+  height: 100vh;
+  // height: 700px;
+  padding: 10px;
   margin: 0px;
+  // background-color: #01579b;
+  position: absolute;
+  left: 0px;
 }
 
 .entertainment-search {
@@ -31,15 +35,27 @@ aside {
 }
 
 .container {
-  float: left;
-  border-color: black;
-  clear: none;
+  // margin-top: 20px;
   width: 400px;
 }
 
+.messages {
+  border: black 1px solid;
+  width: 400px;
+  height: 100px;
+  margin: 20px 20px 20px 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: left;
+}
+
 .content {
-  // border: black 1px solid;
-  margin-left: 10px;
+  border: black 1px solid;
+  margin-left: 250px;
+  width: 400px;
+  height: 530px;
+  float: left;
+  clear: left;
 }
 
 ul {
