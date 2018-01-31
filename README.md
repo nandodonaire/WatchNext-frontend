@@ -42,4 +42,9 @@ https://i.imgur.com/O6gON1W.jpg
 Future enhancements:
 
 1) In a future release, I'd like to add more styling and make it more responsive
-on larger/smaller screen sizes. 
+on larger/smaller screen sizes.
+
+Links to deployed sites:
+
+Frontend: https://nandodonaire.github.io/WatchNext-frontend/
+Backend: https://stark-dawn-66770.herokuapp.com/
