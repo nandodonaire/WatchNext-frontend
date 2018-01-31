@@ -6,8 +6,8 @@ const showEntertainmentsQueueTemplate = require('../templates/entertainments_que
 const createEntertainmentSuccess = function (data) {
   $('#messages').empty()
   $('#content').empty()
-  $('#createModalLabel').text('Added to queue!')
-  $('#createModalLabel').css('color', 'green')
+  // $('#createModalLabel').text('Added to queue!')
+  // $('#createModalLabel').css('color', 'green')
   const createdEntertainmentHTML = (
     `<ul>
     <li><h2>Title: ${data.entertainment.title}</h2></li>
@@ -20,6 +20,8 @@ const createEntertainmentSuccess = function (data) {
   )
   $('#content').append(createdEntertainmentHTML)
   $('#messages').append('Here is the entertainment you created:')
+  $('#createModal').modal('hide')
+  $('#createModalLabel').empty()
 }
 
 const createEntertainmentFailure = function (data) {
@@ -38,7 +40,7 @@ const getAllSuccess = function (data) {
     $('#messages').append('There is nothing on the queue! Please add to the queue by clicking on Add To Queue.')
   } else {
     $('#content').append(showQueueHTML)
-    $('#messages').append('Here are the entertainments in your queue! Please scroll to see all.')
+    $('#messages').append('Here are the entertainments in your queue:')
   }
 }
 
@@ -64,7 +66,7 @@ const getOneEntertainmentSuccess = function (data) {
     </ul>`
   )
   $('#content').append(oneEntertainmentHTML)
-  $('#messages').append('Here is the entertainment that you requested!')
+  $('#messages').append('Here is the entertainment that you requested:')
 }
 
 const getOneEntertainmentFailure = function (data) {
@@ -77,8 +79,8 @@ const getOneEntertainmentFailure = function (data) {
 const updateEntertainmentSuccess = function (data) {
   $('#content').empty()
   $('#messages').empty()
-  $('#updateModalLabel').text('Updated entertainment')
-  $('#updateModalLabel').css('color', 'green')
+  // $('#updateModalLabel').text('Updated entertainment')
+  // $('#updateModalLabel').css('color', 'green')
   const updatedEntertainmentHTML = (
     `<ul>
     <li><h2>Title: ${data.entertainment.title}</h2></li>
@@ -91,6 +93,8 @@ const updateEntertainmentSuccess = function (data) {
   )
   $('#content').append(updatedEntertainmentHTML)
   $('#messages').append('Here is the entertainment you updated:')
+  $('#updateModal').modal('hide')
+  $('#updateModalLabel').empty()
 }
 
 const updateEntertainmentFailure = function (data) {
