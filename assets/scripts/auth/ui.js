@@ -19,6 +19,10 @@ const signInSuccess = function (data) {
   $('#modalLabel').text('Successfully signed in!')
   $('#modalLabel').css('color', 'green')
   $('#messages').empty()
+  const welcomeMessageHTML = (
+    `<p>Welcome ${data.user.email}! You can add entertainments to your queue by clicking on the Add To Queue button. You can then see all of the entertainments in your queue by clicking on Show Queue.</p>`
+  )
+  $('#messages').append(welcomeMessageHTML)
   $('#content').removeClass('hide')
   $('.logged-out').addClass('hide')
   $('.logged-in').removeClass('hide')

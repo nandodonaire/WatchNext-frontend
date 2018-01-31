@@ -19,6 +19,7 @@ const createEntertainmentSuccess = function (data) {
     </ul>`
   )
   $('#content').append(createdEntertainmentHTML)
+  $('#messages').append('Here is the entertainment you created:')
 }
 
 const createEntertainmentFailure = function (error) {
@@ -37,6 +38,7 @@ const getAllSuccess = function (data) {
     $('#messages').append('There is nothing on the queue! Please add to the queue by clicking on Add To Queue.')
   } else {
     $('#content').append(showQueueHTML)
+    $('#messages').append('Here are the entertainments in your queue:')
   }
 }
 
@@ -76,6 +78,18 @@ const updateEntertainmentSuccess = function (data) {
   $('#messages').empty()
   $('#updateModalLabel').text('Updated entertainment')
   $('#updateModalLabel').css('color', 'green')
+  const updatedEntertainmentHTML = (
+    `<ul>
+    <li><h2>Title: ${data.entertainment.title}</h2></li>
+    <li>ID: ${data.entertainment.id} </li>
+    <li>Type: ${data.entertainment.ent_type}</li>
+    <li>Genre: ${data.entertainment.genre}</li>
+    <li>Synopsis: ${data.entertainment.synopsis}</li>
+    <li>Where to Watch: ${data.entertainment.where_to_watch}</li>
+    </ul>`
+  )
+  $('#content').append(updatedEntertainmentHTML)
+  $('#messages').append('Here is the entertainment you updated:')
 }
 
 const updateEntertainmentFailure = function (error) {
